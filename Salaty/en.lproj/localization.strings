@@ -1,0 +1,12 @@
+/* 
+  localization.strings
+  Salaty
+
+  Created by ahmed on 9/11/17.
+  Copyright © 2017 ahmedRabie. All rights reserved.
+*/
+appName = "Salaty"
+
+waitingPlease = "please wait..."
+
+willGetYourLocation = "will get you location to get the salah duration"
