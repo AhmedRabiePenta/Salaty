@@ -70,8 +70,8 @@ class HomePage: UIViewController, UICollectionViewDelegate, UICollectionViewData
         mazhabCollectionView.dataSource = self
         mazhabCollectionView.delegate = self
         
-        collectionView.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
-        rakaaCollectionView.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+     //   collectionView.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+       // rakaaCollectionView.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
 
 
     }
@@ -103,10 +103,21 @@ class HomePage: UIViewController, UICollectionViewDelegate, UICollectionViewData
             return salawatArr.count + 2
         }
         else if collectionView == self.mazhabCollectionView {
-            return salawatArr[selectedSalah - 1].rakaat[selectedraka].rakaaDetails.count
+            if selectedSalah >= 1 && selectedSalah <= 5 {
+                return salawatArr[selectedSalah - 1].rakaat[selectedraka].rakaaDetails.count
+            }else{
+                return salawatArr[1].rakaat[selectedraka].rakaaDetails.count
+            }
+        
         }
         else{
-        return salawatArr[selectedSalah - 1].rakaat.count
+            if selectedSalah >= 1 && selectedSalah <= 5 {
+
+                return salawatArr[selectedSalah - 1].rakaat.count
+            }
+            else{
+                return  salawatArr[1].rakaat.count
+            }
         }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -128,7 +139,7 @@ class HomePage: UIViewController, UICollectionViewDelegate, UICollectionViewData
                 cell.salahName.text = salawatArr[indexPath.row - 1].title
                 cell.salahTime.text = salawatArr[indexPath.row - 1].Time
             }
-            cell.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+         //   cell.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
 
             return cell
         }
@@ -142,7 +153,7 @@ class HomePage: UIViewController, UICollectionViewDelegate, UICollectionViewData
             if selectedSalah != 0 {
             cell.rakaNAme.text = salawatArr[selectedSalah - 1].rakaat[indexPath.row].title
                 cell.indecator.isHidden = true
-            cell.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+         //   cell.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
             }
             return cell
         }
@@ -157,19 +168,40 @@ class HomePage: UIViewController, UICollectionViewDelegate, UICollectionViewData
 
         }
     }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        self.rakaaCollectionView.reloadData()
+        self.mazhabCollectionView.reloadData()
+    }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         var visibleRect = CGRect()
-        
+        var visibleIndexPath: IndexPath? = nil
         visibleRect.origin = collectionView.contentOffset
         visibleRect.size = collectionView.bounds.size
         
         let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
-        
-        let visibleIndexPath: IndexPath = collectionView.indexPathForItem(at: visiblePoint)!
-        selectedSalah = visibleIndexPath.row
-        collectionView.reloadData()
-        rakaaCollectionView.reloadData()
-        mazhabCollectionView.reloadData()
+        if collectionView.indexPathForItem(at: visiblePoint) != nil {
+             visibleIndexPath = collectionView.indexPathForItem(at: visiblePoint)!
+        if (visibleIndexPath?.row)! >= 1 && (visibleIndexPath?.row)! <= 5{
+            
+            if (collectionView.cellForItem(at: visibleIndexPath!) != nil){
+                var cell = collectionView.cellForItem(at: IndexPath(item: selectedSalah, section: 0)) as! salahTimeCell
+                cell.isTransparent(state:true)
+                
+                self.selectedSalah = (visibleIndexPath?.row)!
+
+                cell = collectionView.cellForItem(at: IndexPath(item: selectedSalah, section: 0)) as! salahTimeCell
+                collectionView.scrollToItem(at: visibleIndexPath!, at: .centeredHorizontally, animated: true)
+                cell.isTransparent(state:false)
+            }
+            
+          //self.collectionView.reloadData()
+      
+        }
+        }
+       
+       
+
     }
     
 
@@ -178,6 +210,7 @@ class HomePage: UIViewController, UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.collectionView{
             if indexPath.row != 0 || indexPath.row != 6{
+                collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
             selectedSalah = indexPath.row
             self.collectionView.reloadData()
             
@@ -205,11 +238,11 @@ class HomePage: UIViewController, UICollectionViewDelegate, UICollectionViewData
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == self.collectionView{
-            return CGSize(width: self.view.frame.size.width/3.0, height: 77)
+            return CGSize(width: self.view.frame.size.width/3.0, height: 67)
         }
         else if collectionView == self.mazhabCollectionView
         {
-        return CGSize(width: 403, height: 85)
+        return CGSize(width: self.view.frame.size.width, height: 75)
         }
         else{
             return CGSize(width: 48, height: 70)

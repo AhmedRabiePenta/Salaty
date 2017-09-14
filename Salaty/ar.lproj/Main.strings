@@ -6,7 +6,7 @@
 "0gT-DN-pNN.text" = "v 3.1";
 
 /* Class = "UILabel"; text = "rak3a"; ObjectID = "3Gu-CI-aMa"; */
-"3Gu-CI-aMa.text" = "rak3a";
+"3Gu-CI-aMa.text" = "ركعه";
 
 /* Class = "UILabel"; text = "صلاه الترويح"; ObjectID = "6eh-Fd-fbe"; */
 "6eh-Fd-fbe.text" = "صلاه الترويح";
@@ -54,7 +54,7 @@
 "Rb9-Ub-4Jv.text" = " مشاركه التطبيق";
 
 /* Class = "UILabel"; text = "virsion"; ObjectID = "TiG-hI-SQw"; */
-"TiG-hI-SQw.text" = "virsion";
+"TiG-hI-SQw.text" = "نسخة";
 
 /* Class = "UILabel"; text = "البلد"; ObjectID = "ZjL-gi-PaB"; */
 "ZjL-gi-PaB.text" = "البلد";
@@ -84,7 +84,7 @@
 "ldz-F6-ACl.text" = "Label";
 
 /* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "svC-k3-dJa"; */
-"svC-k3-dJa.title" = "Item";
+"svC-k3-dJa.title" = "اختر";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "xpW-ZC-qnY"; */
 "xpW-ZC-qnY.text" = "Label";

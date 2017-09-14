@@ -16,5 +16,14 @@ class salahTimeCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func isTransparent(state : Bool){
+        if state {
+                self.contentView.alpha = 0.1
+        }else{
+            self.contentView.alpha = 1
+        }
+        
+    }
 
 }
