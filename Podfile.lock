@@ -1,0 +1,15 @@
+PODS:
+  - SwiftyJSON (3.1.4)
+  - UIColor_Hex_Swift (3.0.2)
+
+DEPENDENCIES:
+  - SwiftyJSON
+  - UIColor_Hex_Swift
+
+SPEC CHECKSUMS:
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
+
+PODFILE CHECKSUM: d6d19a06e61c096114f6dfc8e918c80051e266f8
+
+COCOAPODS: 1.2.0

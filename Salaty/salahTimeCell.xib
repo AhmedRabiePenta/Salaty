@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Ghla 2014 Bold_0.ttf">
+            <string>Ghla2014Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="salahTimeCell" id="gTV-IL-0wX" customClass="salahTimeCell" customModule="Salaty" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="159" height="148"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="159" height="148"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ECn-HX-yYu">
+                        <rect key="frame" x="5" y="5" width="149" height="138"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card_bg_elasr" translatesAutoresizingMaskIntoConstraints="NO" id="78w-Iz-V1Z">
+                                <rect key="frame" x="0.0" y="0.0" width="149" height="108"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="١٢.٣٠ م" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3VH-yk-mh7">
+                                <rect key="frame" x="105.5" y="114.5" width="35.5" height="18.5"/>
+                                <fontDescription key="fontDescription" name="Ghla2014Bold" family="Ghla 2014" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="ngz-hB-jtA">
+                                <rect key="frame" x="66.5" y="113" width="15" height="20"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="15" id="Il9-KG-esi"/>
+                                    <constraint firstAttribute="height" constant="20" id="LRf-qA-dGO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="صلاه الظهر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oui-MT-InJ">
+                                <rect key="frame" x="4" y="115.5" width="54" height="18.5"/>
+                                <fontDescription key="fontDescription" name="Ghla2014Bold" family="Ghla 2014" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.15962406992912292" green="0.41534388065338135" blue="0.47019970417022705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="78w-Iz-V1Z" secondAttribute="trailing" id="1zr-Ql-9LY"/>
+                            <constraint firstItem="78w-Iz-V1Z" firstAttribute="top" secondItem="ECn-HX-yYu" secondAttribute="top" id="3Nl-wo-OSJ"/>
+                            <constraint firstItem="78w-Iz-V1Z" firstAttribute="leading" secondItem="ECn-HX-yYu" secondAttribute="leading" id="3rT-cT-4XD"/>
+                            <constraint firstAttribute="bottom" secondItem="78w-Iz-V1Z" secondAttribute="bottom" constant="30" id="4BM-Uh-fVo"/>
+                            <constraint firstItem="oui-MT-InJ" firstAttribute="leading" secondItem="ECn-HX-yYu" secondAttribute="leading" constant="4" id="8kj-2W-KzE"/>
+                            <constraint firstAttribute="bottom" secondItem="oui-MT-InJ" secondAttribute="bottom" constant="4" id="G30-GN-qkz"/>
+                            <constraint firstAttribute="bottom" secondItem="3VH-yk-mh7" secondAttribute="bottom" constant="5" id="dsF-Eb-Ks0"/>
+                            <constraint firstItem="ngz-hB-jtA" firstAttribute="centerX" secondItem="ECn-HX-yYu" secondAttribute="centerX" id="ea8-Bt-gfb"/>
+                            <constraint firstAttribute="trailing" secondItem="3VH-yk-mh7" secondAttribute="trailing" constant="8" id="i7P-d4-5dp"/>
+                            <constraint firstAttribute="bottom" secondItem="ngz-hB-jtA" secondAttribute="bottom" constant="5" id="rqE-uz-QcI"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ECn-HX-yYu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="KD8-Y0-rWu"/>
+                <constraint firstAttribute="trailing" secondItem="ECn-HX-yYu" secondAttribute="trailing" constant="5" id="VVh-IT-Jz7"/>
+                <constraint firstItem="ECn-HX-yYu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="cKb-nE-1dm"/>
+                <constraint firstAttribute="bottom" secondItem="ECn-HX-yYu" secondAttribute="bottom" constant="5" id="wOs-qk-rZc"/>
+            </constraints>
+            <size key="customSize" width="159" height="148"/>
+            <connections>
+                <outlet property="background" destination="78w-Iz-V1Z" id="MNY-Bh-Da7"/>
+                <outlet property="clock" destination="ngz-hB-jtA" id="hMM-yA-3va"/>
+                <outlet property="contentview" destination="ECn-HX-yYu" id="DBa-9K-3yE"/>
+                <outlet property="salahName" destination="oui-MT-InJ" id="9Rx-Tm-GSk"/>
+                <outlet property="salahTime" destination="3VH-yk-mh7" id="9Tq-i2-KSd"/>
+            </connections>
+            <point key="canvasLocation" x="-19.5" y="237"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="card_bg_elasr" width="177" height="168"/>
+        <image name="clock" width="9" height="9"/>
+    </resources>
+</document>
