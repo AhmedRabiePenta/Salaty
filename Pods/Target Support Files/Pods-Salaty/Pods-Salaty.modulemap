@@ -1,6 +1,0 @@
-framework module Pods_Salaty {
-  umbrella header "Pods-Salaty-umbrella.h"
-
-  export *
-  module * { export * }
-}
